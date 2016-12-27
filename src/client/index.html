@@ -9,6 +9,20 @@
 	
 
 	<div id="container">
+
+	<script src="script/three.min.js"></script>
+	<script src="script/panolens.min.js"></script>
+
+	<script>
+
+	    var panorama, viewer;
+
+	    panorama = new PANOLENS.VideoPanorama( 'res/pano.mp4' );
+
+	    viewer = new PANOLENS.Viewer();
+	    viewer.add( panorama );
+
+	</script>
 		
 	</div>
 
