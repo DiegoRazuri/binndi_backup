@@ -42,6 +42,7 @@
     "build": "npm run public && npm run copy-files && npm run build-js",
     "build-front-dev": "npm run public-front-dev && npm run copy-files-front-dev && npm run copy-fonts-front-dev && npm run build-js-front-dev",
     "build-w-vrview": "npm run public && npm run copy-files && npm run build-js && npm run copy-vrview",
+    "dist": "babel src/server/index.js src/server/**/*.js src/server/**/**/*.js --out-dir bin --presets es2015",
     "serve": "NODE_PATH=. babel-node src/server --presets es2015",
     "start": "npm run build && npm run serve"
   }
