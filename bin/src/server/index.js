@@ -28,7 +28,7 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _api = require('src/server/api');
+var _api = require('bin/src/server/api');
 
 var _api2 = _interopRequireDefault(_api);
 
