@@ -1,0 +1,48 @@
+{
+  "name": "binndi",
+  "description": "Tienda virtual de experiencias",
+  "version": "0.1.0",
+  "dependencies": {
+    "aws-sdk": "^2.4.6",
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "body-parser": "^1.15.2",
+    "browserify": "^13.0.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "jquery": "^3.1.0",
+    "mongoose": "^4.5.3",
+    "multer": "^1.1.0",
+    "multer-s3": "^2.3.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-router": "^2.6.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "public": "mkdir -p public",
+    "public-front-dev": "mkdir -p public/front_dev && mkdir -p public/front_dev/style",
+    "build-js": "NODE_PATH=. browserify -t [ babelify --presets [ es2015 react ] ] src/client/main.js > public/app.js",
+    "build-js-front-dev": "cp -R front_dev/script public/front_dev/",
+    "copy-files": "cp src/client/index.html public/index.html && cp src/client/main.css public/app.css",
+    "copy-files-front-dev": "cp front_dev/index.html public/front_dev/index.html && cp front_dev/style/app.css public/front_dev/style/app.css && cp -R front_dev/style/img public/front_dev/style/img",
+    "copy-fonts-front-dev": "cp -R front_dev/style/fonts public/front_dev/style",
+    "copy-vrview": "cp -R src/vrview public/",
+    "copy-fonts": "cp -R src/client/fonts public/ && cp src/client/style.styl public/style.styl",
+    "build": "npm run public && npm run copy-files && npm run build-js",
+    "build-front-dev": "npm run public-front-dev && npm run copy-files-front-dev && npm run copy-fonts-front-dev && npm run build-js-front-dev",
+    "build-w-vrview": "npm run public && npm run copy-files && npm run build-js && npm run copy-vrview",
+    "serve": "NODE_PATH=. babel-node src/server --presets es2015",
+    "start": "npm run build && npm run serve"
+  }
+}
