@@ -5,7 +5,7 @@ import expressSession from 'express-session'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import path from 'path'
-import api from 'bin/src/server/api'
+import api from 'src/server/api'
 
 //configuracion de autenticacion con passport
 const passport = require('passport');
